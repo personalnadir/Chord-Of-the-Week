@@ -1,0 +1,13 @@
+attrdict==2.0.0
+attrs==20.3.0
+beautifulsoup4==4.9.3
+CairoSVG==2.5.2
+drawSvg==1.8.1
+Jinja2==2.11.3
+musthe==1.0.0
+Pillow==6.1.0
+pychord==0.5.1
+requests==2.24.0
+svglib==1.0.1
+svgwrite==1.1.9
+urllib3==1.25.9

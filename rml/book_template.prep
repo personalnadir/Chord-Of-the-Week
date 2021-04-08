@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Chord of the Week</title>
+
+    <style>
+
+        @page {
+          margin-left: 10mm;
+          margin-right: 10mm;
+          margin-top: 10mm;
+          margin-bottom: 10mm;
+        }
+        @page :left {
+          margin-left: 10mm;
+        }
+        @page :right {
+          margin-right: 10mm;
+        }
+
+        #grid {
+          display: grid;
+          gap: 10px;
+          width: 90%x;
+          padding-left: 5%;
+          padding-right: 5%;
+          grid-template-columns: repeat(6, 160px);
+        }
+
+        @media print {
+          #grid {
+            grid-template-columns:1fr 1fr 1fr 1fr;
+          }
+        }
+
+        .cell {
+            border: 2px dashed black;
+            padding:2px;
+            text-align:center;
+            font-style: italic;
+            color: grey;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        h1 {
+            text-align:center;
+            color: #333;
+            font-style: italic;
+        }
+
+        span {
+        }
+
+        .page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .square {
+          width: 10px;
+          height: 10px;
+          background-color: lightgrey;
+          border: 1px solid grey;
+          display: inline-block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Chord of the Week</h1>
+    <i>
+    <ul>
+        <li>* = notes do not match name</li>
+        <li>^ = could not check notes</li>
+    </ul>
+    </i>
+    <div class="page">
+        <div id="grid">
+        {% for chord in chords %}
+            <div class="cell">
+                <img src="{{chord.info}}" width="{{chord.width}}" />
+                <img src="{{chord.fret}}" width="{{chord.width}}" />
+                <span>Played: <div class="square"></div></span>
+                <span>Liked: <div class="square"></div></span>
+            </div>
+
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
